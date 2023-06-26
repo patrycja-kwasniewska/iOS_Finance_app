@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CategoryExpense" representedClassName="CategoryExpense" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="toExpense" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="toCategoryExpense" inverseEntity="Expense"/>
+    </entity>
+    <entity name="CategoryIncome" representedClassName="CategoryIncome" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="toIncome" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Income" inverseName="toCategoryIncome" inverseEntity="Income"/>
+    </entity>
+    <entity name="Expense" representedClassName="Expense" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="details" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="toCategoryExpense" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CategoryExpense" inverseName="toExpense" inverseEntity="CategoryExpense"/>
+    </entity>
+    <entity name="Income" representedClassName="Income" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="details" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="toCategoryIncome" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CategoryIncome" inverseName="toIncome" inverseEntity="CategoryIncome"/>
+    </entity>
+</model>
