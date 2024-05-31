@@ -26,7 +26,7 @@ struct Profile: View {
                 .frame(width: 200, height: 200)
                 .padding()
                 .onLongPressGesture {
-                    author = "Kwaśniewska Patrycja Kurowski Karol"
+                    author = "Kwaśniewska Patrycja"
                 }
             
            
